@@ -1,97 +1,50 @@
 {
-
-  "kind": "Pod",
-
+"kind": "Pod",
   "apiVersion": "v1",
-
   "metadata": {
-
-    "name": "hello-openshift",
-
-    "creationTimestamp": null,
-
+    "name": "first-dockercontainer-ci",
+ "creationTimestamp": null,
     "labels": {
-
-      "name": "hello-openshift"
-
-    }
-
+      "name": "first-dockercontainer-ci"
+  }
   },
-
   "spec": {
-
     "containers": [
-
       {
+        "name": "first-dockercontainer-ci",
 
-        "name": "hello-openshift",
-
-        "image": "openshift/hello-openshift",
-
-        "ports": [
-
-          {
-
-            "containerPort": 8080,
-
-            "protocol": "TCP"
-
-          }
-
-        ],
-
+        "image": "bharghav123/azure",
+ "ports": [
+   {
+"containerPort": 8080,
+     "protocol": "TCP"
+     }
+ ],
         "resources": {},
-
-        "volumeMounts": [
-
+"volumeMounts": [
           {
-
             "name":"tmp",
-
             "mountPath":"/tmp"
-
           }
-
         ],
-
         "terminationMessagePath": "/dev/termination-log",
-
         "imagePullPolicy": "IfNotPresent",
-
         "capabilities": {},
-
         "securityContext": {
-
           "capabilities": {},
-
           "privileged": false
-
         }
-
       }
-
     ],
-
     "volumes": [
-
       {
-
         "name":"tmp",
-
         "emptyDir": {}
-
       }
-
     ],
-
     "restartPolicy": "Always",
-
     "dnsPolicy": "ClusterFirst",
-
     "serviceAccount": ""
-
   },
-
   "status": {}
-
 }
