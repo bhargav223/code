@@ -29,7 +29,7 @@
         ],
         "terminationMessagePath": "/dev/termination-log",
         "imagePullPolicy": "IfNotPresent",
-        "capabilities": {},
+        //"capabilities": {},
         "securityContext": {
           "capabilities": {},
           "privileged": false
