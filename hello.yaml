@@ -1,0 +1,26 @@
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: first-dockercontainer-ci
+  creationTimestamp: 
+  labels:
+    name: first-dockercontainer-ci
+spec:
+  containers:
+  - name: first-dockercontainer-ci
+    image: bharghav123/azure:first-dockercontainer-ci
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+    resources: {}
+    imagePullPolicy: IfNotPresent
+    securityContext:
+      privileged: false
+  volumes:
+  - name: tmp
+    emptyDir: {}
+  restartPolicy: Always
+  dnsPolicy: ClusterFirst
+  serviceAccount: ''
+status: {}
